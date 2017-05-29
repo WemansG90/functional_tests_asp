@@ -8,17 +8,12 @@ import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 @Modules(GuiceModule.class)
 public abstract class BobcatTestCase {
 
   @Inject
   protected WebDriver driver;
-
-  @Inject
-  protected WebDriverWait wait;
 
   @Rule
   public TestRule watcher = new TestWatcher() {

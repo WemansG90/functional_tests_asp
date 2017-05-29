@@ -22,7 +22,7 @@
                 <environment>--local</environment>
                 <configuration.paths>${project.basedir}/src/main/config/common;${project.basedir}/src/main/config/local
                 </configuration.paths>
-                <publisher.url>http://localhost:4503</publisher.url>
+                <site.url>http://pxl.lepside.be/</site.url>
             </properties>
         </profile>
     </profiles>
@@ -48,7 +48,7 @@
                             <systemPropertyVariables>
                                 <environment>${environment}</environment>
                                 <configuration.paths>${configuration.paths}</configuration.paths>
-                                <publisher.url>${publisher.url}</publisher.url>
+                                <site.url>${site.url}</site.url>
                             </systemPropertyVariables>
                             <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
                             <includes>
