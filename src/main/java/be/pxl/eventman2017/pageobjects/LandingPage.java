@@ -43,6 +43,12 @@ public class LandingPage extends AbstractPage{
         return logoutButton;
     }
 
+    public void loginHelper(String login, String password) {
+        getUserNameInput().sendKeys(login);
+        getPassWordInput().sendKeys(password);
+        getLoginButton().click();
+    }
+
     @Override
     public String getContentPath() {
         return "";

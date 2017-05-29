@@ -39,22 +39,15 @@ public class LandingPageTest extends BobcatTestCase {
 
     @Test
     public void testAdministratorLogin(){
-        loginHelper(adminUsername,adminPassword);
+        landingPage.loginHelper(adminUsername,adminPassword);
         assertThat(driver.findElement(By.cssSelector("a[href=\"/Manage\"]")).getText(), is("Hello Admin Geoffrey!"));
     }
 
     @Test
     public void testLogout(){
-        loginHelper(adminUsername,adminPassword);
+        landingPage.loginHelper(adminUsername,adminPassword);
         landingPage.getLogoutButton().click();
         assertThat(landingPage.getLoginButton().isDisplayed(), is(true));
     }
-
-    private void loginHelper(String login, String password) {
-        landingPage.getUserNameInput().sendKeys(login);
-        landingPage.getPassWordInput().sendKeys(password);
-        landingPage.getLoginButton().click();
-    }
-
 
 }
