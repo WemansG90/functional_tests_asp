@@ -1,0 +1,34 @@
+## +++ +++ Remote +++ +++ ##
+
+#webdriver.type=remote
+#webdriver.url=http://testlab.rto.be:4444/wd/hub
+#webdriver.defaultTimeout=10
+#page.title.timeout=30
+#thread.count=1
+
+# +++ Chrome +++
+#webdriver.cap.browserName=chrome
+
+
+## +++ +++ Local +++ +++ ##
+
+# +++ Firefox +++
+#webdriver.type=firefox
+# If you have special version for test you can uncomment and change next line
+#webdriver.firefox.bin=c:/Program Files (x86)/Mozilla_Firefox_26/firefox.exe
+
+# +++ Chrome +++
+#webdriver.type=chrome
+# change the path to your local chromedriver
+#webdriver.chrome.driver=/Users/dimitrisaeys/.npm-packages/lib/node_modules/selenium-standalone/.selenium/chromedriver/2.22-x64-chromedriver
+
+# +++ IE +++
+#webdriver.type=IE
+#webdriver.ie.driver=E:/IEDriverServer.exe
+
+# +++ Ghost/Phantomjs +++
+#webdriver.type=ghost
+#phantomjs.binary.path=E:/phantomjs-1.9.7-windows/phantomjs.exe
+
+# +++ HtmlUnit +++
+#webdriver.type=html
