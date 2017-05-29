@@ -1,3 +1,4 @@
-<b>Webdriver Tests for the EventManager2017 project<b/>
+## Synopsis
 
-These are the automated tests for the ASP MVC part of the EventManager2017 application
+These are the automated functional tests for the EventManager2017 project, using the Bobcat webdriver framework
+
