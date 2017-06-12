@@ -1,15 +1,12 @@
 package be.pxl.eventman2017.student;
 
-import be.pxl.eventman2017.pageobjects.AbstractPage;
-import com.cognifide.qa.bb.qualifier.PageObject;
+import be.pxl.eventman2017.GuiceModule;
+import com.cognifide.qa.bb.junit.Modules;
+import com.cognifide.qa.bb.junit.TestRunner;
+import org.junit.runner.RunWith;
 
-@PageObject
-public class StudentRegistrationPageTest extends AbstractPage {
+@RunWith(TestRunner.class)
+@Modules(GuiceModule.class)
+public class StudentRegistrationPageTest {
 
-
-
-    @Override
-    public String getContentPath() {
-        return "/registration?e=1";
-    }
 }

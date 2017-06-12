@@ -1,7 +1,7 @@
 package be.pxl.eventman2017;
 
-import com.cognifide.qa.bb.modules.CoreModule;
 import com.cognifide.qa.bb.logging.ReporterModule;
+import com.cognifide.qa.bb.modules.CoreModule;
 import com.google.inject.AbstractModule;
 
 /**

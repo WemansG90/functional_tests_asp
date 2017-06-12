@@ -14,8 +14,8 @@ import org.openqa.selenium.By;
 
 import javax.inject.Named;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
 public class AdminEventOverviewPageTest extends BobcatTestCase {
