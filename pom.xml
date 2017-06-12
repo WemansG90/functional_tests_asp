@@ -39,7 +39,7 @@
                 <version>2.19.1</version>
                 <executions>
                     <execution>
-                        <id>run-the-parallel-bobcat-testds</id>
+                        <id>run-the-parallel-bobcat-tests</id>
                         <phase>integration-test</phase>
                         <goals>
                             <goal>integration-test</goal>
@@ -54,6 +54,8 @@
                             <includes>
                                 <include>**</include>
                             </includes>
+                            <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                            <skipAfterFailureCount>2</skipAfterFailureCount>
                             <parallel>methods</parallel>
                             <threadCount>3</threadCount>
                             <forkCount>3</forkCount>

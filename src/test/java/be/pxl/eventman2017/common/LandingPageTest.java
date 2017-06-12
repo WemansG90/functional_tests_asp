@@ -47,13 +47,13 @@ public class LandingPageTest extends BobcatTestCase {
     @Test
     public void testAdministratorLogin(){
         landingPage.loginHelper(adminLogin,adminPassword);
-        assertThat(landingPage.getAccountManagementButton().getText(), is("Hello Admin Geoffrey!"));
+        assertThat(landingPage.getAccountManagementButton().getText(), is("Hallo Admin Geoffrey!"));
     }
 
     @Test
     public void testCompanyLogin(){
         landingPage.loginHelper(companyLogin, companyPassword);
-        assertThat(landingPage.getAccountManagementButton().getText(), is("Hello Bedrijf A!"));
+        assertThat(landingPage.getAccountManagementButton().getText(), is("Hallo Bedrijf A!"));
     }
 
     @Test
