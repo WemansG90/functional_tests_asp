@@ -6,6 +6,7 @@ import be.pxl.eventman2017.pageobjects.LandingPage;
 import com.cognifide.qa.bb.junit.Modules;
 import com.cognifide.qa.bb.junit.TestRunner;
 import com.google.inject.Inject;
+import org.eclipse.jetty.util.annotation.Name;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,11 +25,19 @@ public class LandingPageTest extends BobcatTestCase {
 
     @Inject
     @Named("site.adminlogin")
-    private String adminUsername;
+    private String adminLogin;
 
     @Inject
     @Named("site.adminpassword")
     private String adminPassword;
+
+    @Inject
+    @Named("site.companylogin")
+    private String companyLogin;
+
+    @Inject
+    @Named("site.companypassword")
+    private String companyPassword;
 
     @Override
     @Before
@@ -39,13 +48,19 @@ public class LandingPageTest extends BobcatTestCase {
 
     @Test
     public void testAdministratorLogin(){
-        landingPage.loginHelper(adminUsername,adminPassword);
-        assertThat(driver.findElement(By.cssSelector("a[href=\"/Manage\"]")).getText(), is("Hello Admin Geoffrey!"));
+        landingPage.loginHelper(adminLogin,adminPassword);
+        assertThat(landingPage.getAccountManagementButton().getText(), is("Hello Admin Geoffrey!"));
+    }
+
+    @Test
+    public void testCompanyLogin(){
+        landingPage.loginHelper(companyLogin, companyPassword);
+        assertThat(landingPage.getAccountManagementButton().getText(), is("Hello Bedrijf A!"));
     }
 
     @Test
     public void testLogout(){
-        landingPage.loginHelper(adminUsername,adminPassword);
+        landingPage.loginHelper(adminLogin,adminPassword);
         landingPage.getLogoutButton().click();
         assertThat(landingPage.getLoginButton().isDisplayed(), is(true));
     }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @PageObject
-public class LandingPage extends AbstractPage{
+public class LandingPage extends AbstractPage {
 
     @FindBy(
             css = "#Email"
@@ -27,6 +27,12 @@ public class LandingPage extends AbstractPage{
     )
     private WebElement logoutButton;
 
+    @FindBy(
+            css = "a[href=\"/Manage\"]"
+    )
+    private WebElement accountManagementButton;
+
+
     public WebElement getUserNameInput() {
         return userName;
     }
@@ -41,6 +47,10 @@ public class LandingPage extends AbstractPage{
 
     public WebElement getLogoutButton() {
         return logoutButton;
+    }
+
+    public WebElement getAccountManagementButton() {
+        return accountManagementButton;
     }
 
     public void loginHelper(String login, String password) {
