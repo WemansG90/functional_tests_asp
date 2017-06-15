@@ -20,4 +20,3 @@ npm-debug.log
 .eslintrc
 .yarnrc
 cobertura-coverage.xml
-src/main/config/local/webdriver.properties
