@@ -4,7 +4,6 @@ import be.pxl.eventman2017.pageobjects.AbstractPage;
 import com.cognifide.qa.bb.qualifier.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 
 @PageObject
@@ -46,24 +45,40 @@ public class StudentRegistrationPage extends AbstractPage{
     private WebElement otherRadioButton;
 
     @FindBy(
-            id ="School_Id_listbox"
+            css ="span[aria-owns='School_Id_listbox']"
     )
-    private Select schoolDropDown;
+    private WebElement schoolDropDown;
 
     @FindBy(
-            id="Education_Id_listbox"
+            css="span[aria-owns='Education_Id_listbox']"
     )
-    private Select educationDropDown;
+    private WebElement courseDropDown;
+
+    @FindBy(
+            css = "div[class=type-not-student] label"
+    )
+    private WebElement nonStudentInputLabel;
 
     @FindBy(
             css="input[id='Function']"
     )
-    private WebElement functionField;
+    private WebElement nonStudentInputField;
 
     @FindBy(
             css="button[type= 'submit'] "
     )
     private WebElement submitButton;
+
+    @FindBy(
+            css = "div[class~='k-upload']"
+    )
+    private WebElement kendoUploadWidget;
+
+    @FindBy(
+            css = "div[class~='event-title']"
+    )
+    private WebElement eventName;
+
 
     public WebElement getFirstName() {
         return firstName;
@@ -93,20 +108,32 @@ public class StudentRegistrationPage extends AbstractPage{
         return otherRadioButton;
     }
 
-    public Select getSchoolDropDown() {
+    public WebElement getSchoolDropDown() {
         return schoolDropDown;
     }
 
-    public Select getEducationDropDown() {
-        return educationDropDown;
+    public WebElement getCourseDropDown() {
+        return courseDropDown;
     }
 
-    public WebElement getFunctionField() {
-        return functionField;
+    public WebElement getNonStudentInputField() {
+        return nonStudentInputField;
+    }
+
+    public WebElement getNonStudentInputLabel() {
+        return nonStudentInputLabel;
     }
 
     public WebElement getSubmitButton() {
         return submitButton;
+    }
+
+    public WebElement getKendoUploadWidget() {
+        return kendoUploadWidget;
+    }
+
+    public WebElement getEventName() {
+        return eventName;
     }
 
     @Override
