@@ -63,12 +63,8 @@
                             <includes>
                                 <include>**</include>
                             </includes>
-                            <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                            <rerunFailingTestsCount>1</rerunFailingTestsCount>
                             <skipAfterFailureCount>2</skipAfterFailureCount>
-                            <parallel>methods</parallel>
-                            <threadCount>3</threadCount>
-                            <forkCount>3</forkCount>
-                            <reuseForks>true</reuseForks>
                         </configuration>
                     </execution>
                 </executions>
