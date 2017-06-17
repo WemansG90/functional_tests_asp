@@ -12,7 +12,7 @@
     <properties>
         <configuration.paths>src/main/config</configuration.paths>
         <webDriver.type>chrome</webDriver.type>
-        <bobcat.version>1.1.0</bobcat.version>
+        <bobcat.version>1.2.1</bobcat.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <profiles>
@@ -21,6 +21,15 @@
             <properties>
                 <environment>--local</environment>
                 <configuration.paths>${project.basedir}/src/main/config/common;${project.basedir}/src/main/config/local
+                </configuration.paths>
+                <site.url>http://pxl.lepside.be/</site.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>functional-tests</id>
+            <properties>
+                <environment>--jenkins</environment>
+                <configuration.paths>${project.basedir}/src/main/config/common;${project.basedir}/src/main/config/integration
                 </configuration.paths>
                 <site.url>http://pxl.lepside.be/</site.url>
             </properties>
@@ -119,6 +128,11 @@
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-multibindings</artifactId>
             <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
         </dependency>
     </dependencies>
 </project>
