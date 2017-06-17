@@ -1,8 +1,8 @@
 package be.pxl.eventman2017.common;
 
 import be.pxl.eventman2017.BobcatTestCase;
-import be.pxl.eventman2017.GuiceModule;
-import be.pxl.eventman2017.pageobjects.LandingPage;
+import be.pxl.eventman2017.configuration.GuiceModule;
+import be.pxl.eventman2017.pageobjects.common.LandingPage;
 import com.cognifide.qa.bb.junit.Modules;
 import com.cognifide.qa.bb.junit.TestRunner;
 import com.google.inject.Inject;

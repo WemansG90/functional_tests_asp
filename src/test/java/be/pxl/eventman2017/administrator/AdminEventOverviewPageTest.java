@@ -1,6 +1,6 @@
 package be.pxl.eventman2017.administrator;
 
-import be.pxl.eventman2017.GuiceModule;
+import be.pxl.eventman2017.configuration.GuiceModule;
 import be.pxl.eventman2017.pageobjects.administrator.AdminEventOverviewPage;
 import com.cognifide.qa.bb.junit.Modules;
 import com.cognifide.qa.bb.junit.TestRunner;
@@ -19,23 +19,28 @@ public class AdminEventOverviewPageTest extends AdminTestCase {
     private AdminEventOverviewPage adminEventOverviewPage;
 
     @Test
-    public void testUpcomingEventListVisibleByDefault() throws Exception{
+    public void testUpcomingEventListVisibleByDefault(){
         int eventSize = adminEventOverviewPage.getUpcomingEventsList().size();
         assertThat(eventSize,is(4));
     }
 
     @Test
-    public void testChangeToPastEvents()throws Exception{
+    public void testChangeToPastEvents(){
         adminEventOverviewPage.getPastEventsTab().click();
         int eventSize = adminEventOverviewPage.getPastEventsList().size();
         assertThat(eventSize, is(1));
     }
 
     @Test
-    public void testUpcomingEventSearch() throws Exception{
-        adminEventOverviewPage.getUpcommingSearch().sendKeys("christmas");
+    public void testUpcomingEventSearch() {
+        adminEventOverviewPage.getUpcomingSearch().sendKeys("christmas");
         String eventTitle = driver.findElement(By.cssSelector("div[ng-repeat*='upcoming'] h3.ng-binding")).getText();
         assertThat(eventTitle, is("Christmas Party"));
+    }
+
+    @Test
+    public void testIfCreateEventButtonIsVisible(){
+        assertThat(adminEventOverviewPage.getCreateEventButton().isDisplayed(),is(true));
     }
 
 

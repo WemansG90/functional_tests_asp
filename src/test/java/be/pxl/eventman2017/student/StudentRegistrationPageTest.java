@@ -1,7 +1,7 @@
 package be.pxl.eventman2017.student;
 
 import be.pxl.eventman2017.BobcatTestCase;
-import be.pxl.eventman2017.GuiceModule;
+import be.pxl.eventman2017.configuration.GuiceModule;
 import be.pxl.eventman2017.pageobjects.student.StudentRegistrationPage;
 import com.cognifide.qa.bb.junit.Modules;
 import com.cognifide.qa.bb.junit.TestRunner;

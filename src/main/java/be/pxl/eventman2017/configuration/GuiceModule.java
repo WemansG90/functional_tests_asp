@@ -1,4 +1,4 @@
-package be.pxl.eventman2017;
+package be.pxl.eventman2017.configuration;
 
 import com.cognifide.qa.bb.logging.ReporterModule;
 import com.cognifide.qa.bb.modules.CoreModule;
@@ -14,12 +14,13 @@ import com.google.inject.AbstractModule;
  * reporting functionality, including reporting rule and HTML report.
  */
 public class GuiceModule extends AbstractModule {
-  @Override
-  protected void configure() {
-    if (System.getProperty("configuration.paths") == null) {
-      System.setProperty("configuration.paths", "src/main/config/local;src/main/config/common");
+    @Override
+    protected void configure() {
+        if (System.getProperty("configuration.paths") == null) {
+            System.setProperty("configuration.paths", "src/main/config/local;src/main/config/common");
+        }
+        install(new CoreModule());
+        install(new ReporterModule());
+        install(new WebDriverWaitModule());
     }
-    install(new CoreModule());
-    install(new ReporterModule());
-  }
 }

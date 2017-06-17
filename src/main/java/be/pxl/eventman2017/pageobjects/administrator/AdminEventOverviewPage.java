@@ -34,12 +34,17 @@ public class AdminEventOverviewPage extends AbstractPage{
     @FindBy(
             css = "input[ng-model*='Upcoming']"
     )
-    private WebElement upcommingSearch;
+    private WebElement upcomingSearch;
 
     @FindBy(
             css = "input[ng-model*='Past']"
     )
     private WebElement pastSearch;
+
+    @FindBy(
+            css= "button.add-event-button"
+    )
+    private WebElement createEventButton;
 
     public List<WebElement> getUpcomingEventsList() {
         return upcomingEventsList;
@@ -57,12 +62,16 @@ public class AdminEventOverviewPage extends AbstractPage{
         return pastEventsTab;
     }
 
-    public WebElement getUpcommingSearch() {
-        return upcommingSearch;
+    public WebElement getUpcomingSearch() {
+        return upcomingSearch;
     }
 
     public WebElement getPastSearch() {
         return pastSearch;
+    }
+
+    public WebElement getCreateEventButton() {
+        return createEventButton;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package be.pxl.eventman2017.administrator;
 
-import be.pxl.eventman2017.GuiceModule;
+import be.pxl.eventman2017.configuration.GuiceModule;
 import be.pxl.eventman2017.pageobjects.administrator.AdminCompanyOverviewPage;
 import com.cognifide.qa.bb.junit.Modules;
 import com.cognifide.qa.bb.junit.TestRunner;

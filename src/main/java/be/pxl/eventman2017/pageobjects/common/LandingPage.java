@@ -1,5 +1,6 @@
-package be.pxl.eventman2017.pageobjects;
+package be.pxl.eventman2017.pageobjects.common;
 
+import be.pxl.eventman2017.pageobjects.AbstractPage;
 import com.cognifide.qa.bb.qualifier.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
