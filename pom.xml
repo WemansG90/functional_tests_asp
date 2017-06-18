@@ -61,7 +61,7 @@
                             </systemPropertyVariables>
                             <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
                             <includes>
-                                <include>**</include>
+                                <include>TestOrderSuite.java</include>
                             </includes>
                             <rerunFailingTestsCount>1</rerunFailingTestsCount>
                             <skipAfterFailureCount>2</skipAfterFailureCount>
