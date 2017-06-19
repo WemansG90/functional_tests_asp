@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
-public class AdminEventOverviewPageTest extends AdminTestCase {
+public class AdminEventOverviewPageClass extends AdminTestCase {
 
     @Inject
     private AdminEventOverviewPage adminEventOverviewPage;
@@ -21,7 +21,7 @@ public class AdminEventOverviewPageTest extends AdminTestCase {
     @Test
     public void testUpcomingEventListVisibleByDefault(){
         int eventSize = adminEventOverviewPage.getUpcomingEventsList().size();
-        assertThat(eventSize,is(4));
+        assertThat(eventSize,is(3));
     }
 
     @Test

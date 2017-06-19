@@ -14,10 +14,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
-public class AdminEventDetailPageTest extends AdminTestCase {
+public class AdminEventDetailPageClass extends AdminTestCase {
 
     @Inject
     private EventDetailPage eventDetailPage;
+
+    private static final String EXPECTED_EVENT_DATE = "donderdag, 21 december 2017 21:00";
 
     @Override
     @Before
@@ -39,7 +41,7 @@ public class AdminEventDetailPageTest extends AdminTestCase {
 
     @Test
     public void testThatEventDetailPageHasDateDetails() {
-        assertThat(eventDetailPage.getEventDetails().get(0).getAttribute("innerText"), is("Thursday, December 21, 2017 9:00 PM"));
+        assertThat(eventDetailPage.getEventDetails().get(0).getAttribute("innerText"), is(EXPECTED_EVENT_DATE));
     }
 
     @Test

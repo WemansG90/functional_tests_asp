@@ -20,7 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
-public class AdminCreateEventTest extends AdminTestCase {
+public class AdminCreateEventClass extends AdminTestCase {
 
     @Inject
     private AdminEventOverviewPage adminEventOverviewPage;

@@ -18,7 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
-public class AdminCompanyOverviewPageTest extends AdminTestCase {
+public class AdminCompanyOverviewPageClass extends AdminTestCase {
 
     @Inject
     private AdminCompanyOverviewPage adminCompanyOverviewPage;

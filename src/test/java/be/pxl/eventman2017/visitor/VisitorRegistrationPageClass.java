@@ -1,4 +1,4 @@
-package be.pxl.eventman2017.student;
+package be.pxl.eventman2017.visitor;
 
 import be.pxl.eventman2017.BobcatTestCase;
 import be.pxl.eventman2017.configuration.GuiceModule;
@@ -21,8 +21,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(TestRunner.class)
 @Modules(GuiceModule.class)
-public class StudentRegistrationPageTest extends BobcatTestCase {
-
+public class VisitorRegistrationPageClass extends BobcatTestCase{
     @Inject
     private StudentRegistrationPage studentRegistrationPage;
 
@@ -126,5 +125,4 @@ public class StudentRegistrationPageTest extends BobcatTestCase {
         }
         return optionText;
     }
-
 }

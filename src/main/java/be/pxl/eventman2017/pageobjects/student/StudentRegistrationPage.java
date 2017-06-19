@@ -55,7 +55,7 @@ public class StudentRegistrationPage extends AbstractPage{
     private WebElement courseDropDown;
 
     @FindBy(
-            css = "div[class=type-not-student] label"
+            css = "div[class=type-not-visitor] label"
     )
     private WebElement nonStudentInputLabel;
 

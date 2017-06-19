@@ -14,6 +14,7 @@
         <webDriver.type>chrome</webDriver.type>
         <bobcat.version>1.2.1</bobcat.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <fork.count>1</fork.count>
     </properties>
     <profiles>
         <profile>
@@ -29,7 +30,8 @@
             <id>functional-tests</id>
             <properties>
                 <environment>--jenkins</environment>
-                <configuration.paths>${project.basedir}/src/main/config/common;${project.basedir}/src/main/config/integration
+                <configuration.paths>
+                    ${project.basedir}/src/main/config/common;${project.basedir}/src/main/config/integration
                 </configuration.paths>
                 <site.url>http://pxl.lepside.be/</site.url>
             </properties>
@@ -45,15 +47,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.19.1</version>
                 <executions>
                     <execution>
-                        <id>run-the-parallel-bobcat-tests</id>
+                        <id>run-the-bobcat-tests</id>
                         <phase>integration-test</phase>
                         <goals>
                             <goal>integration-test</goal>
                         </goals>
                         <configuration>
+                            <!--<rerunFailingTestsCount>1</rerunFailingTestsCount>-->
+                            <!--<skipAfterFailureCount>2</skipAfterFailureCount>-->
+                            <excludes>
+                                <exclude>**</exclude>
+                            </excludes>
                             <systemPropertyVariables>
                                 <environment>${environment}</environment>
                                 <configuration.paths>${configuration.paths}</configuration.paths>
@@ -61,10 +67,8 @@
                             </systemPropertyVariables>
                             <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
                             <includes>
-                                <include>TestOrderSuite.java</include>
+                                <include>**TestOrderSuite.java</include>
                             </includes>
-                            <rerunFailingTestsCount>1</rerunFailingTestsCount>
-                            <skipAfterFailureCount>2</skipAfterFailureCount>
                         </configuration>
                     </execution>
                 </executions>
